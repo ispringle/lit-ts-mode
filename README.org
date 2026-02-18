@@ -1,0 +1,39 @@
+* lit-ts-mode
+
+Lit-aware major modes for JavaScript and TypeScript.  Uses the
+[[https://github.com/ispringle/tree-sitter-lit-html][lit-html]] tree-sitter
+grammar instead of standard =html=, and adds completion for CSS classes and IDs
+across =html`...`= / =css`...`= tagged template literals.
+
+** Requirements
+
+- Emacs 30+
+- [[https://github.com/ispringle/template-literals-ts-mode][template-literals-ts-mode]]
+- Tree-sitter grammars: =javascript=, =typescript=, =css=, =lit-html=
+
+The =lit-html= grammar source is registered automatically.  Install it with
+=M-x treesit-install-language-grammar RET lit-html RET=.
+
+** Installation
+
+#+begin_src emacs-lisp
+(use-package lit-ts-mode
+  :ensure (:host github :repo "ispringle/lit-ts-mode")
+  :mode (("\\.js\\'" . lit-js-ts-mode)
+         ("\\.ts\\'" . lit-typescript-ts-mode)))
+#+end_src
+
+** Modes
+
+- =lit-js-ts-mode= — derives from =js-ts-mode=
+- =lit-typescript-ts-mode= — derives from =typescript-ts-mode=
+
+** Completion
+
+Completion at point is provided for:
+
+- CSS selectors after =.= or =#= inside =css`...`=
+- Class and ID attribute values inside =html`...`=
+
+Candidates are collected from both CSS selectors and HTML attributes across all
+template literals in the buffer.
