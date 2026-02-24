@@ -1,6 +1,6 @@
 ;;; lit-ts-mode.el --- Lit-aware JS/TS modes with tree-sitter support -*- lexical-binding: t; -*-
 
-;; Author: Ian S. Pringle
+;; Author: Ian S. Pringle <ian@dapringles.com>
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "30.1") (template-literals-ts-mode "0.1.0"))
 ;; Keywords: languages, javascript, typescript, tree-sitter, lit
@@ -32,8 +32,8 @@
 ;; typescript, css, and lit-html grammars installed.
 ;;
 ;; Usage:
-;;   Use `lit-js-ts-mode' instead of `js-ts-mode'
-;;   Use `lit-typescript-ts-mode' instead of `typescript-ts-mode'
+;;   Use `lit-ts-js-mode' instead of `js-ts-mode'
+;;   Use `lit-ts-typescript-mode' instead of `typescript-ts-mode'
 
 ;;; Code:
 
@@ -205,12 +205,12 @@ lit-html grammar for html tagged literals, enables
 ;;; Modes
 
 ;;;###autoload
-(define-derived-mode lit-js-ts-mode js-ts-mode "Lit[JS]"
+(define-derived-mode lit-ts-js-mode js-ts-mode "Lit[JS]"
   "Major mode for Lit-enhanced JavaScript with lit-html template support."
   (lit-ts-mode--setup))
 
 ;;;###autoload
-(define-derived-mode lit-typescript-ts-mode typescript-ts-mode "Lit[TS]"
+(define-derived-mode lit-ts-typescript-mode typescript-ts-mode "Lit[TS]"
   "Major mode for Lit-enhanced TypeScript with lit-html template support."
   (lit-ts-mode--setup))
 
