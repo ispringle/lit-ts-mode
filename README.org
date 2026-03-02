@@ -16,12 +16,22 @@ The =lit-html= grammar source is registered automatically.  Install it with
 
 ** Installation
 
+Available on [[https://melpa.org/#/lit-ts-mode][MELPA]].
+
+With =use-package=:
+
 #+begin_src emacs-lisp
 (use-package lit-ts-mode
-  :ensure (:host github :repo "ispringle/lit-ts-mode")
+  :ensure t
   :mode (("\\.js\\'" . lit-js-ts-mode)
          ("\\.ts\\'" . lit-typescript-ts-mode)))
 #+end_src
+
+Or with =package.el=:
+
+#+begin_example
+M-x package-install RET lit-ts-mode RET
+#+end_example
 
 ** Modes
 
